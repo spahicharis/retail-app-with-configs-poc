@@ -1,2 +1,13 @@
-<h5>Signin modal app</h5>
-<h2>{{title}}</h2>
+<div style="padding: 20px; background-color: aliceblue;">
+  <h5>Signin modal app</h5>
+  <h2>{{ title }}</h2>
+
+  <p *ngFor="let r of routes">
+    <a routerLink="{{r}}">{{r}}</a>
+  </p>
+
+  <hr>
+
+  <app-route-wrapper></app-route-wrapper>
+
+</div>

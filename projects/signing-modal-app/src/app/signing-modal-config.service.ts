@@ -2,14 +2,16 @@ import { InjectionToken } from '@angular/core';
 
 export interface SigningModalConfigurationInterface {
   title: string;
+  routes: string[];
 }
 
-export const SigningModalConfigurationToken = new InjectionToken(
+export const SigningModalConfigurationToken = new InjectionToken<SigningModalConfigurationInterface>(
   'SigningModalConfiguration injection token'
 );
 
 export const configDefaults = {
   title: 'Default title',
+  routes: ['route-1', 'route-2']
 };
 
 export class SigningModalService {
@@ -27,5 +29,8 @@ export class SigningModalService {
     return this._config.title;
   }
 
+  get routes(): string[] {
+    return this._config.routes;
+  }
 
 }

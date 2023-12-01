@@ -8,8 +8,10 @@ import { SigningModalConfigurationInterface, SigningModalConfigurationToken } fr
 })
 export class AppComponent {
   title = 'signing-modal-app';
+  routes: string[] = [];
 
   constructor(@Inject(SigningModalConfigurationToken) private config: SigningModalConfigurationInterface) {
     this.title = config.title;
+    this.routes = config.routes;
   }
 }
