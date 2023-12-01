@@ -93,6 +93,188 @@
           }
         }
       }
+    },
+    "signing-modal-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/signing-modal-app",
+      "sourceRoot": "projects/signing-modal-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/signing-modal-app",
+            "index": "projects/signing-modal-app/src/index.html",
+            "main": "projects/signing-modal-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/signing-modal-app/tsconfig.app.json",
+            "assets": [
+              "projects/signing-modal-app/src/favicon.ico",
+              "projects/signing-modal-app/src/assets"
+            ],
+            "styles": [
+              "projects/signing-modal-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "signing-modal-app:build:production"
+            },
+            "development": {
+              "browserTarget": "signing-modal-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "signing-modal-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/signing-modal-app/tsconfig.spec.json",
+            "assets": [
+              "projects/signing-modal-app/src/favicon.ico",
+              "projects/signing-modal-app/src/assets"
+            ],
+            "styles": [
+              "projects/signing-modal-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "payment-order-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/payment-order-app",
+      "sourceRoot": "projects/payment-order-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/payment-order-app",
+            "index": "projects/payment-order-app/src/index.html",
+            "main": "projects/payment-order-app/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/payment-order-app/tsconfig.app.json",
+            "assets": [
+              "projects/payment-order-app/src/favicon.ico",
+              "projects/payment-order-app/src/assets"
+            ],
+            "styles": [
+              "projects/payment-order-app/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "payment-order-app:build:production"
+            },
+            "development": {
+              "browserTarget": "payment-order-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "payment-order-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/payment-order-app/tsconfig.spec.json",
+            "assets": [
+              "projects/payment-order-app/src/favicon.ico",
+              "projects/payment-order-app/src/assets"
+            ],
+            "styles": [
+              "projects/payment-order-app/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }
